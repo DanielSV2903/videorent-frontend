@@ -1,0 +1,24 @@
+.search-page {
+  padding: 16px;
+}
+.hero {
+  margin-bottom: 16px;
+}
+.eyebrow {
+  margin: bottom 8px;;
+  font-weight: bold;
+}
+.search-form {
+  margin-bottom: 16px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.field input{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+}
