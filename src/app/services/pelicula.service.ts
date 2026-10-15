@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
 export class PeliculaService {
 private apiUrl =`${environment.API_URL}peliculas`;
 constructor(private http:HttpClient){ }
+
 findMovies(titulo:string='',genero:string=''):Observable<Pelicula[]>{
   const params = new HttpParams()
   .set('titulo', titulo??'')
@@ -17,5 +18,10 @@ findMovies(titulo:string='',genero:string=''):Observable<Pelicula[]>{
   //Peticion http GET
   return this.http.get<Pelicula[] | null>(this.apiUrl, {params}).pipe(map(response=>response?? [] ));
 }
+
+ guardarPelicula(pelicula: any): Observable<Pelicula> { // Usar 'any' o la interface Pelicula
+    return this.http.post<any>(this.apiUrl, pelicula);
+  }
+
 
 }
